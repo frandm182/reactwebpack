@@ -4,11 +4,17 @@ var htmlWebpackPlugin = require('html-webpack-plugin');
 
 var BUILD_DIR = path.join(__dirname, 'dist');
 var APP_DIR = path.join(__dirname, 'src');
+const VENDOR_LIBS = ['react','react-dom','react-router-dom'];
 
-var config = {entry: APP_DIR + '/index.js',
+var config = {
+    // entry: APP_DIR + '/index.js',
+    entry: {
+        bundle: APP_DIR + '/index.js',
+        vendor: VENDOR_LIBS
+    },
     output: {
         path: BUILD_DIR,
-        filename: 'app.bundle.js'
+        filename: '[name].js'
     },
     module: {
         loaders: [
@@ -35,6 +41,9 @@ var config = {entry: APP_DIR + '/index.js',
     plugins: [
         new htmlWebpackPlugin({
             template: 'index.html'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'manifest']
         })
     ]
 }
