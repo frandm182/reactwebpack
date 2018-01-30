@@ -20,6 +20,10 @@ var config = {entry: APP_DIR + '/app.js',
             {
                 test: /\.css$/,
                 use: ['style-loader','css-loader']
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: 'file-loader'
             }
         ]
     }
