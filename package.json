@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack -d --watch",
+    "dev": "npm run clean-dist && webpack -d --watch",
+    "clean-dist": "rimraf dist",
     "http-server": "http-server dist/"
   },
   "dependencies": {
