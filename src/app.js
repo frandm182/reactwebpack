@@ -11,7 +11,7 @@ import SearchPage from './Components/SearchPage';
 import Loading from './Components/Loading';
 
 let loadableBookDetails = Loadable({
-  loader: () => BookDetails,
+  loader: () => import('./Components/BookDetails'),
   loading: Loading,
 })
 

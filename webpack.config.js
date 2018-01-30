@@ -12,16 +12,23 @@ var config = {
         vendor: VENDOR_LIBS
     },
     output: {
-        path: BUILD_DIR,
-        filename: '[name].[hash].js'
+        // path: BUILD_DIR,
+        // filename: '[name].[hash].js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[hash].js',
+        publicPath: '/'
     },
     module: {
         loaders: [
             {
                 test: /\.(js|jsx)$/,
-                // include: APP_DIR,
                 exclude: /node_modules/,
-                use: 'babel-loader'
+                loader: 'babel-loader',
+                options: {
+                    babelrc: false,
+                    presets: ["babel-preset-env", "react", "stage-2"],
+                    plugins: ["syntax-dynamic-import"]
+                }
             },
             {
                 test: /\.css$/,
