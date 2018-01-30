@@ -13,7 +13,7 @@ var config = {
     },
     output: {
         path: BUILD_DIR,
-        filename: '[name].[chunkhash].js'
+        filename: '[name].[hash].js'
     },
     module: {
         loaders: [
@@ -37,13 +37,22 @@ var config = {
             }
         ]
     },
+    devServer: {
+        contentBase: BUILD_DIR,
+        compress: true,
+        port: 9000,
+        disableHostCheck: false,
+        open: true,
+        hot: true
+    },
     plugins: [
         new htmlWebpackPlugin({
             template: 'index.html'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest']
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
 module.exports = config;
