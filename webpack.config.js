@@ -7,14 +7,13 @@ var APP_DIR = path.join(__dirname, 'src');
 const VENDOR_LIBS = ['react','react-dom','react-router-dom'];
 
 var config = {
-    // entry: APP_DIR + '/index.js',
     entry: {
         bundle: APP_DIR + '/index.js',
         vendor: VENDOR_LIBS
     },
     output: {
         path: BUILD_DIR,
-        filename: '[name].js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         loaders: [

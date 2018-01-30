@@ -22,7 +22,7 @@ const Home = ({ books, handleBookStatusUpdate }) => {
   return (
     <div className='list-books'>
       <div className='list-books-title'>
-        <h1>MyReads app</h1>
+        <h1>MyReads apdfdfp</h1>
       </div>
       <div className='list-books-content'>
         {shelves.map((bookShelf) =>
