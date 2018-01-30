@@ -4,13 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "npm run clean-dist && webpack -d --watch",
+    "dev": "webpack-dev-server",
     "clean-dist": "rimraf dist",
-    "http-server": "http-server dist/"
+    "build": "webpack -d"
   },
   "dependencies": {
     "bundle-loader": "^0.5.5",
-    "http-server": "^0.11.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -32,6 +31,6 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^2.11.1"
   }
 }
