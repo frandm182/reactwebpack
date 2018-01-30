@@ -16,6 +16,10 @@ var config = {entry: APP_DIR + '/app.js',
                 // include: APP_DIR,
                 exclude: /node_modules/,
                 use: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader','css-loader']
             }
         ]
     }
